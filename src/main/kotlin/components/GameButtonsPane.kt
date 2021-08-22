@@ -3,6 +3,7 @@ package components
 import kotlinx.css.*
 import kotlinx.html.js.onClickFunction
 import react.*
+import style.GameButtonStyles
 import styled.*
 
 external interface GameButtonsPaneProps : RProps {
@@ -13,7 +14,7 @@ external interface GameButtonsPaneProps : RProps {
 val GAME_BUTTONS_PANE = rFunction<GameButtonsPaneProps>("game_buttons_pane") { props ->
     styledDiv {
         css {
-            marginTop = 15.px
+            +GameButtonStyles.pane
             display = Display.flex
             justifyContent = JustifyContent.spaceBetween
         }
@@ -21,9 +22,7 @@ val GAME_BUTTONS_PANE = rFunction<GameButtonsPaneProps>("game_buttons_pane") { p
             styledButton {
                 css {
                     background = color
-                    width = 50.px
-                    height = 50.px
-                    borderRadius = 50.pct
+                    +GameButtonStyles.button
                 }
                 attrs {
                     onClickFunction = {

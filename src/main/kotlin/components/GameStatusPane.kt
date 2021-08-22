@@ -5,6 +5,7 @@ import kotlinx.html.js.onClickFunction
 import org.w3c.dom.events.Event
 import react.*
 import react.dom.*
+import style.GameStatusPaneStyle
 import styled.*
 
 external interface GameStatusPaneProps : RProps {
@@ -25,8 +26,7 @@ val GAME_STATUS_PANE = rFunction<GameStatusPaneProps>("game_status_pane") { prop
 
         styledButton {
             css {
-                marginTop = 15.px
-                marginBottom = 15.px
+                +GameStatusPaneStyle.newGameButton
             }
             attrs {
                 onClickFunction = props.onNewGame

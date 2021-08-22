@@ -8,6 +8,8 @@ import org.w3c.dom.events.Event
 import react.*
 import styled.*
 
+const val GAME_CELL_SIZE = 30
+
 external interface ChameleonGameProps : RProps {
     var colors: List<String>
     var fieldSize: Int
