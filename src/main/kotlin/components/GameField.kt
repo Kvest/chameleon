@@ -9,7 +9,7 @@ import styled.css
 import styled.styledDiv
 
 external interface GameFieldProps : RProps {
-    var field: List<List<Int>>
+    var field: Array<IntArray>
     var colors: List<String>
 }
 
@@ -27,7 +27,7 @@ val GAME_FIELD = rFunction<GameFieldProps>("game_field") { props ->
     }
 }
 
-fun RBuilder.gameField(field: List<List<Int>>, colors: List<String>) = GAME_FIELD.invoke {
+fun RBuilder.gameField(field: Array<IntArray>, colors: List<String>) = GAME_FIELD.invoke {
     attrs.field = field
     attrs.colors = colors
 }
