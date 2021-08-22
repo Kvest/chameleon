@@ -12,7 +12,7 @@ object GameButtonStyles : StyleSheet("GameButtonStyles", isStatic = true) {
         width = 50.px
         height = 50.px
         borderRadius = 50.pct
-        border = "none"
+        border = BorderStyle.none.name
         cursor = Cursor.pointer
     }
 }

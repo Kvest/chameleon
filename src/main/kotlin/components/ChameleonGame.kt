@@ -6,6 +6,7 @@ import logic.isWin
 import logic.recolorField
 import org.w3c.dom.events.Event
 import react.*
+import style.GameCompletionPaneStyles
 import styled.*
 
 const val GAME_CELL_SIZE = 30
@@ -45,10 +46,22 @@ class ChameleonGame(props: ChameleonGameProps) : RComponent<ChameleonGameProps, 
                 totalMoves = props.movesCount,
                 onNewGame = ::onNewGame
             )
-            gameField(
-                field = state.field,
-                colors = props.colors
-            )
+
+            styledDiv {
+                css {
+                    position = Position.relative
+                }
+
+                gameField(
+                    field = state.field,
+                    colors = props.colors
+                )
+
+                if (state.isGameFinished) {
+                    gameCompletionPane(state.isWin)
+                }
+            }
+
             gameButtonsPane(
                 colors = props.colors,
                 onChangeColor = ::onChangeColor
