@@ -42,7 +42,7 @@ fun Array<IntArray>.recolorField(newColor: Int, oldColor: Int, i: Int, j: Int) {
     this.recolorField(newColor, oldColor, i, j + 1)
 }
 
-fun isWon(field: Array<IntArray>): Boolean {
+fun isWin(field: Array<IntArray>): Boolean {
     field.forEach { row ->
         row.forEach { item ->
             if (item != field[0][0]) {

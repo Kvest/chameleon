@@ -13,8 +13,9 @@ external interface GameButtonsPaneProps : RProps {
 val GAME_BUTTONS_PANE = rFunction<GameButtonsPaneProps>("game_buttons_pane") { props ->
     styledDiv {
         css {
+            marginTop = 15.px
             display = Display.flex
-            flexDirection = FlexDirection.row
+            justifyContent = JustifyContent.spaceBetween
         }
         props.colors.mapIndexed { index, color ->
             styledButton {
@@ -22,6 +23,7 @@ val GAME_BUTTONS_PANE = rFunction<GameButtonsPaneProps>("game_buttons_pane") { p
                     background = color
                     width = 50.px
                     height = 50.px
+                    borderRadius = 50.pct
                 }
                 attrs {
                     onClickFunction = {

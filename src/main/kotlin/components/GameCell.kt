@@ -4,6 +4,8 @@ import kotlinx.css.*
 import react.*
 import styled.*
 
+const val GAME_CELL_SIZE = 30
+
 external interface GameCellProps : RProps {
     var color: String
 }
@@ -13,8 +15,8 @@ val GAME_CELL = rFunction<GameCellProps>("game_cell") { props ->
         css {
             css {
                 background = props.color
-                width = 30.px
-                height = 30.px
+                width = GAME_CELL_SIZE.px
+                height = GAME_CELL_SIZE.px
             }
         }
     }
