@@ -16,6 +16,10 @@ jobs:
       - name: Fetch Sources
         uses: actions/checkout@v2
 
+      # Fix "./gradlew: Permission denied" issue
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+
       # Build application
       - name: Build
         run: ./gradlew build
